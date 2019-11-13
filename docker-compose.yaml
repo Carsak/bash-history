@@ -1,0 +1,13 @@
+version: "3.2"
+
+services:
+  db:
+    build: ./docker
+      # dockerfile: ./docker/Dockerfile
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: test
+    volumes:
+      # - ./init:/docker-entrypoint-initdb.d
+      - ./saved-history:/tuning
